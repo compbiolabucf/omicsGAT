@@ -30,8 +30,6 @@ parser.add_argument('--cluster_affn', type=str, default='manhattan', help='Clust
 parser.add_argument('--cluster_dist', type=str, default='average', help='Clustering distance used for hierarchical clustering')
 
 
-## For BLCA clustering default results embed = 64, nb_heads = 64
-
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
 

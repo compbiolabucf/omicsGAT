@@ -18,27 +18,7 @@ from cluster_model import autoencoder
 from cluster_utils import load_data, process_data
 
 
-# # Training settings
-# parser = argparse.ArgumentParser()
-# parser.add_argument('--no_cuda', action='store_true', default=False, help='Disables CUDA training.')
-# parser.add_argument('--seed', type=int, default=27, help='Random seed.')
-# parser.add_argument('--epochs', type=int, default=10000, help='Number of epochs to train.')
-# parser.add_argument('--nb_clusters', type=int, default=5, help='Number of clusters')
-# # parser.add_argument('--net_density', type=int, default=0.2, help='Network density of the adjacency matrix')
-# parser.add_argument('--lr', type=float, default=0.005, help='Initial learning rate.')
-# parser.add_argument('--weight_decay', type=float, default=5e-4, help='Weight decay (L2 loss on parameters).')
-# parser.add_argument('--embed', type=int, default=64, help='Number of hidden units.')
-# parser.add_argument('--nb_heads', type=int, default=64, help='Number of head attentions.')
-# # parser.add_argument('--dropout', type=float, default=0.6, help='Dropout rate (1 - keep probability).')
-# parser.add_argument('--alpha', type=float, default=0.2, help='Alpha for the leaky_relu.')
-# parser.add_argument('--patience', type=int, default=100, help='Patience')
-# parser.add_argument('--cluster_affn', type=str, default='manhattan', help='Clustering affinity used for hierarchical clustering')
-# parser.add_argument('--cluster_dist', type=str, default='average', help='Clustering distance used for hierarchical clustering')
 
-
-
-
-## suitable seed-- 27, 8, 1, 7, 2, 16
 def train_auto(auto_model, optimizer, loss, features, adj, epoch):
     t = time.time()
     auto_model.train()

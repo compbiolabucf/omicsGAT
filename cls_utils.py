@@ -22,9 +22,7 @@ def load_data():
     Y_load = pd.read_csv('brca_data/labels.csv')
     adj = pd.read_csv('brca_data/adjacency_matrix.csv')
     
-    Y_load.drop('Samples', axis = 1, inplace=True)
     Y_load.replace(to_replace={'Positive', 'Negative'}, value ={1,0}, inplace = True)
-    adj.drop('Unnamed: 0', axis=1, inplace=True)
 
     return X_load, Y_load, adj
 

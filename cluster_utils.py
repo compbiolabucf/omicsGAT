@@ -17,10 +17,6 @@ def load_data(clr_type):
         Y_load = pd.read_csv('scr_data/labels.csv')
         adjacent_mat = pd.read_csv('scr_data/adjacency_matrix.csv')
 
-    X_load.drop('Unnamed: 0', axis = 1, inplace=True)
-    Y_load.drop('Unnamed: 0', axis = 1, inplace=True)
-    adjacent_mat.drop('Unnamed: 0', axis = 1, inplace=True)
-
     return X_load, Y_load, adjacent_mat
 
 

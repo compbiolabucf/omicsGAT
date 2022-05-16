@@ -38,5 +38,11 @@ The label data can be a series vector of shape _sample_\*1. A label vector for t
 | Sample3 |   -   |
 
 ## Code run
-The omicsGAT model can be run using the command line interface. User only needs to run the 'main.py' script. A number of options or flags are available to modify the model or traiing process. 
-The 'task' type can be selected using command line option '--task'. Default task is set to be 'classification'. If 'clustering' is selected as the task then the clustering type can be selected between 'bulk' and 'single_cell' using the '--clustering_type' option.
+The omicsGAT model can be run using the command line interface. User only needs to run the 'main.py' script. A number of options or flags are available to modify the model or traiing process. \
+'--task' : Using this option one can select between 'classification' and 'clustering' tasks. Default is 'classification'.\
+'--selection' : For the 'classification' task, if multiple labels are present ('ER', 'TN' etc), this option lets the user select the intended label. Default is set to 'ER'. If there is a single label, this option should be set to 'NULL'.\
+'--clustering_type' : If 'clustering' is selected as task, then the type of clustering (bulk or scRNA) can be selected using this option. Default is 'bulk'.\
+'--nb_heads' and '--embed' : Provides the number of heads and the embedding size of each head for the model.\
+'--nb_clusters' : Selects the number of clusters for the stratification task. Default is 5.\
+'--clustering_affn' and 'clustering_affn' : Hyperparameters used for the hierarchical clustering from _scikit-learn_ library.\
+The other options can be used to modify the training process of the model. 

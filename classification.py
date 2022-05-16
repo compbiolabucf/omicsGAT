@@ -133,7 +133,8 @@ def classifier(args):
     # Load data
     select = args.selection
     X, Y, adj = load_data()
-    Y = Y[select]
+    if (select != 'NULL'):
+        Y = Y[select]
 
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2)
     x, x_val, y, y_val = train_test_split(X_train, Y_train, test_size = 0.2)

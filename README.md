@@ -43,7 +43,7 @@ The classification class label should be binary (i.e. 'Positive', 'Negative). Fo
 The omicsGAT model can be run using the command line interface. User only needs to run the 'main.py' script. A number of options or flags are available to modify the model or traiing process. \
 '--task' : Using this option one can select between 'classification' and 'clustering' tasks. Default is 'classification'.\
 '--selection' : For the 'classification' task, if multiple labels are present ('ER', 'TN' etc), this option lets the user select the intended label. Default is set to 'ER'. If there is a single label, this option should be set to 'NULL'.\
-'--clustering_type' : If 'clustering' is selected as task, then the type of clustering (bulk or scRNA) can be selected using this option. Default is 'bulk'.\
+'--clustering_type' : If 'clustering' is selected as task, then the type of clustering ('bulk' or 'single_cell') can be selected using this option. Default is 'bulk'.\
 '--nb_heads' and '--embed' : Provides the number of heads and the embedding size of each head for the model.\
 '--nb_clusters' : Selects the number of clusters for the stratification task. Default is 5.\
 '--clustering_affn' and 'clustering_affn' : Hyperparameters used for the hierarchical clustering from _scikit-learn_ library.\

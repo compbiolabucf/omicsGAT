@@ -1,6 +1,13 @@
 # omicsGAT
 omicsGAT is a graph attention network based framework for cancer subtype analysis. It performs the task of classification or clustering of patient/cell samples based on the gene expression. It strives to secure important information while discarding the rest by assigning different attention coefficients to the neighbors of a sample in a network/graph.
 
+## Required Python libraries
+- Pytorch (>= 1.11) [with cudatoolkit (>= 11.3.1) if cuda is used]
+- scikit-learn (>= 1.0.2)
+- scipy (>= 1.7.1)
+- pandas (>= 1.3.4)
+- numpy (>= 1.20.3)
+
 ## Code descriptions
 **main.py** file can be run to train and evaluate the omicsGAT model for classification or clustering. This file takes the inputs and calls the other functions from different files based on the task and other options selected.\
 **classification.py** file runs the classification task. It splits the input dataset into train, test and validation set. Then it calls function from the **cls_model.py** file to create the omicsGAT classification model, trains it and print out the AUROC score along with loss for the test set.\

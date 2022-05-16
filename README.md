@@ -56,7 +56,7 @@ The omicsGAT model can be run using the command line interface. User only needs 
 '--clustering_affn' and '--clustering_dist' : Hyperparameters used for the hierarchical clustering from _scikit-learn_ library. Default is set to 'manhattan' and 'aveerage' respectively.\
 The other options can be used to modify the training process of the model. 
 
-**Command examples**
+**Command examples**\
 An example for running the classification task: python main.py --task classification --selection ER\
 An example for running bulk RNA-seq clustering: python main.py --task clustering --clustering_type bulk --nb_clusters 5 --nb_heads 64 --embed 64\
 An example for running scRNA-seq clustering: python main.py --task clustering --clustering_type single_cell --nb_clusters 6 --cluster_affn cosine

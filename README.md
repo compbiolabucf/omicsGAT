@@ -46,12 +46,16 @@ The label data can be a series vector of shape _sample_\*1. A label vector for t
 
 The classification class label should be binary (i.e. 'Positive', 'Negative). For example, for 'ER', 'Sample1' could be 'Positive' or 'Negative'. For the clastering part, integer multi-label can be used depending on the number of clusters. For the sample bulk RNA-seq dataset (BLCA), '0,1,2,3,4' labels are being used.
 
-## Code run
+## Running the code
 The omicsGAT model can be run using the command line interface. User only needs to run the 'main.py' script. A number of options or flags are available to modify the model or traiing process. \
 '--task' : Using this option one can select between 'classification' and 'clustering' tasks. Default is 'classification'.\
 '--selection' : For the 'classification' task, if multiple labels are present ('ER', 'TN' etc), this option lets the user select the intended label. Default is set to 'ER'. If there is a single label, this option should be set to 'NULL'.\
 '--clustering_type' : If 'clustering' is selected as task, then the type of clustering ('bulk' or 'single_cell') can be selected using this option. Default is 'bulk'.\
 '--nb_heads' and '--embed' : Provides the number of heads and the embedding size of each head for the model. Default is set to 8 for both of them.\
 '--nb_clusters' : Selects the number of clusters for the stratification task. Default is 5.\
-'--clustering_affn' and 'clustering_affn' : Hyperparameters used for the hierarchical clustering from _scikit-learn_ library.\
+'--clustering_affn' and '--clustering_dist' : Hyperparameters used for the hierarchical clustering from _scikit-learn_ library. Default is set to 'manhattan' and 'aveerage' respectively.\
 The other options can be used to modify the training process of the model. 
+
+An example for running the classification task: python main.py --task classification --selection ER
+An example for running bulk RNA-seq clustering: python main.py --task clustering --clustering_type bulk --nb_clusters 5 --nb_heads 64 --embed 64
+An example for running scRNA-seq clustering: python main.py --task clustering --clustering_type single_cell --nb_clusters 6 --cluster_affn cosine

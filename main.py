@@ -16,7 +16,6 @@ parser.add_argument('--no_cuda', action='store_true', default=False, help='Disab
 parser.add_argument('--seed', type=int, default=27, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=10000, help='Number of epochs to train.')
 parser.add_argument('--selection', type=str, default='ER', help='Selects the category of BRCA: ER or TN')
-parser.add_argument('--neighbors', type=int, default=10, help='No. of neighbors to keep for a node')
 parser.add_argument('--lr', type=float, default=0.005, help='Initial learning rate.')
 parser.add_argument('--weight_decay', type=float, default=5e-4, help='Weight decay (L2 loss on parameters).')
 parser.add_argument('--embed', type=int, default=8, help='Number of hidden units.')

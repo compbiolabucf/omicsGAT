@@ -18,7 +18,7 @@ def roc_score(output, labels):
 
 def load_data():
     
-    X_load = pd.read_csv('brca_data/feature_matrix.csv', index_col=0)
+    X_load = pd.read_csv('brca_data/feature_matrix.csv')
     Y_load = pd.read_csv('brca_data/labels.csv', index_col=0)
     adj = pd.read_csv('brca_data/adjacency_matrix.csv', index_col=0)
     

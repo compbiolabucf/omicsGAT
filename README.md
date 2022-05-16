@@ -37,6 +37,8 @@ The label data can be a series vector of shape _sample_\*1. A label vector for t
 | Sample2 |   -   |
 | Sample3 |   -   |
 
+The classification class label should be binary (i.e. 'Positive', 'Negative). For example, for 'ER', 'Sample1' could be 'Positive' or 'Negative'. For the clastering part, integer multi-label can be used depending on the number of clusters. For the sample bulk RNA-seq dataset (BLCA), '0,1,2,3,4' labels are being used.
+
 ## Code run
 The omicsGAT model can be run using the command line interface. User only needs to run the 'main.py' script. A number of options or flags are available to modify the model or traiing process. \
 '--task' : Using this option one can select between 'classification' and 'clustering' tasks. Default is 'classification'.\

@@ -1,6 +1,10 @@
 # omicsGAT
 omicsGAT is a graph attention network based framework for cancer subtype analysis. It performs the task of classification or clustering of patient/cell samples based on the gene expression. It strives to secure important information while discarding the rest by assigning different attention coefficients to the neighbors of a sample in a network/graph.
 
+## Workflow
+![alt text](https://github.com/compbiolabucf/omicsGAT/blob/main/omicsGAT_workflow.png)
+
+
 ## Required Python libraries
 - Pytorch (>= 1.11) [with cudatoolkit (>= 11.3.1) if cuda is used]
 - scikit-learn (>= 1.0.2)

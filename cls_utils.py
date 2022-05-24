@@ -8,7 +8,7 @@ from sklearn.metrics import roc_auc_score
 
 
 def roc_score(output, labels):
-    preds = output.max(1)[1]
+    preds = output[:,1]
     out_arr = preds.cpu().detach().numpy()
     labels_arr = labels.cpu().detach().numpy()
     score = roc_auc_score(labels_arr, out_arr)

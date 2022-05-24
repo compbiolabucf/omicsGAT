@@ -23,7 +23,7 @@ Similarly, **clustering.py** file runs clustering (bulk RNA-seq or scRNA-seq). I
 BRCA data for classification: https://drive.google.com/drive/folders/1wEOhmtMVt-S-2mKTqsQVXD1Chnxqn80T?usp=sharing \
 BLCA data for bulk RNA-seq clustering: https://drive.google.com/drive/folders/163vmubMxpg2yd22IMNK9skcQk03frQlX?usp=sharing \
 Single-cell RNA-seq data for clustering: https://drive.google.com/drive/folders/1wv8eHr3G93GEOO2YDoCg2IRytNf6RS_1?usp=sharing \
-If used, these datasets should be placed in the same directory as that of the codes ('.py' files).
+If used, these datasets should be placed in the same directory as that of the codes ('.py' files). Note that, these datasets are already preprocessed. As mentioned in the paper, the features of the BRCA data comprises of gene expression selected using correlation whereas, features of BLCA and scRNA data comprises of PCA components. Therefore, no preprocessing needs to be done for them if used.
 
 ## Input data format
 All input data should be provided in '.csv' format and placed in the directory specified in the 'load_data()' function of **cls_utils.py** or **clustering_utils.py** file for the respective task. Input for a specific task consists of the feature matrix, binary adjacency matrix and label data.\

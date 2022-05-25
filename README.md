@@ -6,6 +6,7 @@ omicsGAT is a graph attention network based framework for cancer subtype analysi
 
 
 ## Required Python libraries
+- Python (>= 3.9.7)
 - Pytorch (>= 1.11) [with cudatoolkit (>= 11.3.1) if cuda is used]
 - scikit-learn (>= 1.0.2)
 - scipy (>= 1.7.1)

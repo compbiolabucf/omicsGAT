@@ -17,21 +17,15 @@ class omicsGAT(nn.Module):
         in_features = nhid * nheads
         
         self.dnn = nn.Sequential(
-                    nn.Linear(in_features, int(in_features/2)),
-                    nn.BatchNorm1d(int(in_features/2)),
+                    nn.BatchNorm1d(in_features),
                     nn.ReLU(inplace = True),
-                    
-                    nn.Linear(int(in_features/2), 16),
-                    nn.BatchNorm1d(16),
-                    nn.ReLU(inplace = True))
-
-        self.fc = nn.Linear(16,nclass)
+                    nn.Linear(in_features,nclass))
         
     def forward(self, x, adj):
         x = F.dropout(x, self.dropout, training=self.training)
         x = torch.cat([att(x, adj) for att in self.attentions], dim=1)  ## concatanating all the attention heads dimension (#input X out_features*nb_heads);   out_features = nhid... each head contributing to (#input X out_features)
         x = F.dropout(x, self.dropout, training=self.training)        
         x = self.dnn(x)
-        x = F.log_softmax(self.fc(x), dim = 1)
+        x = F.log_softmax(x, dim = 1)
 
         return x   
